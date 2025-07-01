@@ -10,10 +10,6 @@
 ## 🌿 Overview
 MindGarden is a cutting-edge mental wellness platform that combines **AI-powered chat support** and a **gamified reward system** to help users maintain their psychological well-being through **daily check-ins**. By offering a unique, visual representation of personal growth, MindGarden transforms mental self-care into an **engaging and rewarding journey**.
 
-## 🔗 Live Demo
-Experience MindGarden yourself by visiting our live deployment:
-[mind-garden.hyper6xhurmasice.online](https://mind-garden.hyper6xhurmasice.online)
-
 ## 🎯 Goals
 
 - ✅ **Encourage Consistency** - Establishing a **daily mental health check-in routine** is crucial for long-term improvement. MindGarden tracks user activity to reinforce this habit.
