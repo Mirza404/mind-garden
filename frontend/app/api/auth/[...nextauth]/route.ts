@@ -11,9 +11,10 @@ const pool = new Pool({
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // },
+  //Removed this bcs my database is local and does not require SSL, uncomment if connecting to a remote db
 });
 
 const handler = NextAuth({
