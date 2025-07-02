@@ -60,20 +60,17 @@ export const getAchievements = async (req: Request, res: Response): Promise<void
           unlocked: checkIns.length >= 1,
           date: checkIns.length >= 1 ? new Date(checkIns[0].createdAt).toISOString() : null,
         };
-      case 2: // Week Warrior
+      case 2: {
+        // Week Warrior
         const weekWarriorDate = getStreakDate(checkIns, 7);
         return {
           ...achievement,
           unlocked: weekWarriorDate !== null,
           date: weekWarriorDate,
         };
-      case 3: // Mindfulness Master
-        return {
-          ...achievement,
-          unlocked: checkIns.length >= 30,
-          date: checkIns.length >= 30 ? new Date(checkIns[29].createdAt).toISOString() : null,
-        };
-      case 4: // Reflection Guru
+      }
+      case 4: {
+        // Reflection Guru
         const journalEntries = checkIns.filter((checkIn) => checkIn.journalEntry);
         return {
           ...achievement,
@@ -83,7 +80,9 @@ export const getAchievements = async (req: Request, res: Response): Promise<void
               ? new Date(journalEntries[9].createdAt).toISOString()
               : null,
         };
-      case 5: // Self-Care Champion
+      }
+      case 5: {
+        // Self-Care Champion
         const positiveCheckIns = checkIns.filter((checkIn) =>
           ['great', 'good'].includes(checkIn.mood.toLowerCase())
         );
@@ -93,6 +92,7 @@ export const getAchievements = async (req: Request, res: Response): Promise<void
           unlocked: selfCareDate !== null,
           date: selfCareDate,
         };
+      }
       default:
         return achievement;
     }
