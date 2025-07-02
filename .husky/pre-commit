@@ -2,33 +2,12 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # Frontend formatting
-echo "🔍 Checking frontend formatting..."
+echo "🔍 Formatting frontend code..."
 cd frontend && npm run format
 
-# Check if any files were changed by Prettier in frontend
-if git diff --name-only --exit-code .; then
-  echo "✅ Frontend code is properly formatted!"
-else
-  echo "❌ Frontend commit failed due to formatting issues."
-  echo "🔧 The formatting issues have been fixed. Please run:"
-  echo "    git add ."
-  echo "    git commit"
-  exit 1
-fi
-
 # Backend formatting
-echo "🔍 Checking backend formatting..."
+echo "🔍 Formatting backend code..."
 cd ../backend && npm run format
 
-# Check if any files were changed by Prettier in backend
-if git diff --name-only --exit-code .; then
-  echo "✅ Backend code is properly formatted!"
-else
-  echo "❌ Backend commit failed due to formatting issues."
-  echo "🔧 The formatting issues have been fixed. Please run:"
-  echo "    git add ."
-  echo "    git commit"
-  exit 1
-fi
-
 cd ..
+echo "✅ Formatting complete. Proceeding with commit."

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { fetchCheckInsForUser } from './dailyCheckInController';
 import { sendSuccess, throwError } from '../utils/responseHandlers';
-import { Achievement } from '../types/Achievement';
+import { achievements } from '../config/achievements';
 
 export function getStreakDate(
   records: Array<{ checkInDate: Date; createdAt: Date }>,
@@ -52,67 +52,50 @@ export const getAchievements = async (req: Request, res: Response): Promise<void
     journalEntry: string;
   }>;
 
-  const firstSteps: Achievement = {
-    id: 1,
-    title: 'First Steps',
-    description: 'Complete your first check-in',
-    unlocked: checkIns.length >= 1,
-    date: checkIns.length >= 1 ? new Date(checkIns[0].createdAt).toISOString() : null,
-  };
-
-  const unlockWeekWarrior = getStreakDate(checkIns, 7);
-  const weekWarrior: Achievement = {
-    id: 2,
-    title: 'Week Warrior',
-    description: 'Complete 7 consecutive daily check-ins',
-    unlocked: unlockWeekWarrior !== null,
-    date: unlockWeekWarrior,
-  };
-
-  const mindfullnessMaster: Achievement = {
-    id: 3,
-    title: 'Mindfulness Master',
-    description: 'Complete 30 daily check-ins',
-    unlocked: checkIns.length >= 30,
-    date: checkIns.length >= 30 ? new Date(checkIns[29].createdAt).toISOString() : null,
-  };
-
-  const journalEntries: Array<{ journalEntry: string; createdAt: Date }> = checkIns
-    .filter((checkIn) => checkIn.journalEntry) // Only count non-empty journal entries
-    .map((checkIn) => ({
-      journalEntry: checkIn.journalEntry,
-      createdAt: checkIn.createdAt,
-    }));
-  const reflectionGuru: Achievement = {
-    id: 4,
-    title: 'Reflection Guru',
-    description: 'Write 10 journal entries',
-    unlocked: journalEntries.length >= 10,
-    date: journalEntries.length >= 10 ? new Date(journalEntries[9].createdAt).toISOString() : null,
-  };
-
-  const positiveCheckIns: Array<{ checkInDate: Date; createdAt: Date }> = checkIns
-    .filter((checkIn) => ['great', 'good'].includes(checkIn.mood.toLowerCase()))
-    .map((checkIn) => ({
-      checkInDate: checkIn.checkInDate,
-      createdAt: checkIn.createdAt,
-    }));
-  const unlockMood = getStreakDate(positiveCheckIns, 5);
-  const selfCareChampion: Achievement = {
-    id: 5,
-    title: 'Self-Care Champion',
-    description: 'Report 5 consecutive days of positive mood',
-    unlocked: unlockMood !== null,
-    date: unlockMood,
-  };
-
-  const achievements = [
-    firstSteps,
-    weekWarrior,
-    mindfullnessMaster,
-    reflectionGuru,
-    selfCareChampion,
-  ];
-
-  sendSuccess(res, { achievements }, 200);
+  const achievementsData = achievements.map((achievement) => {
+    switch (achievement.id) {
+      case 1: // First Steps
+        return {
+          ...achievement,
+          unlocked: checkIns.length >= 1,
+          date: checkIns.length >= 1 ? new Date(checkIns[0].createdAt).toISOString() : null,
+        };
+      case 2: {
+        // Week Warrior
+        const weekWarriorDate = getStreakDate(checkIns, 7);
+        return {
+          ...achievement,
+          unlocked: weekWarriorDate !== null,
+          date: weekWarriorDate,
+        };
+      }
+      case 4: {
+        // Reflection Guru
+        const journalEntries = checkIns.filter((checkIn) => checkIn.journalEntry);
+        return {
+          ...achievement,
+          unlocked: journalEntries.length >= 10,
+          date:
+            journalEntries.length >= 10
+              ? new Date(journalEntries[9].createdAt).toISOString()
+              : null,
+        };
+      }
+      case 5: {
+        // Self-Care Champion
+        const positiveCheckIns = checkIns.filter((checkIn) =>
+          ['great', 'good'].includes(checkIn.mood.toLowerCase())
+        );
+        const selfCareDate = getStreakDate(positiveCheckIns, 5);
+        return {
+          ...achievement,
+          unlocked: selfCareDate !== null,
+          date: selfCareDate,
+        };
+      }
+      default:
+        return achievement;
+    }
+  });
+  sendSuccess(res, { achievements: achievementsData }, 200);
 };
