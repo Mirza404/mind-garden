@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { fetchCheckInsForUser } from './dailyCheckInController';
 import { sendSuccess, throwError } from '../utils/responseHandlers';
-import { Achievement } from '../types/Achievement';
 import { achievements } from '../config/achievements';
 
 export function getStreakDate(
