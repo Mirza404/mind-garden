@@ -5,3 +5,9 @@ export type Achievement = {
   unlocked: boolean;
   date: string | null;
 };
+
+export type AchievementData = {
+  id: number;
+  title: string;
+  description: string;
+};
