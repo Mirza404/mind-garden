@@ -28,7 +28,7 @@ The **Japanese bonsai tree** serves as a powerful visual motivator, offering a *
 |---------|---------|---------|---------|
 | ![Bonsai Level 1](./frontend/public/BonsaiLevel1.gif) | ![Bonsai Level 2](./frontend/public/BonsaiLevel2.gif) | ![Bonsai Level 3](./frontend/public/BonsaiLevel3.gif) | ![Bonsai Level 4](./frontend/public/BonsaiLevel4.gif) |
 
-## 💻 Tech Stack & Implementation  
+## Tech Stack & Implementation  
 
 ### Frontend  
 Built with **Next.js** for fast performance and SEO optimization, styled using **Tailwind CSS** and **Shadcn UI** for a modern, responsive design. **TypeScript** ensures maintainability and type safety, while **Zustand** provides lightweight state management. Data fetching is handled efficiently with **React Query**, and authentication is secured using **NextAuth.js** with a **PostgreSQL adapter**.  
@@ -39,6 +39,3 @@ Powered by **Express.js** for robust API handling and business logic, with **Pos
 ### Infrastructure & Deployment
 
 Deployed on **AWS** for scalable compute and managed database resources. **Docker** containers ensure consistency across environments, streamlining both development and deployment. Infrastructure is provisioned and managed using **Terraform**, enabling repeatable, version-controlled infrastructure as code. **GoDaddy** and AWS-managed IPs are used for domain and IP management. **Husky** enforces code quality through pre-commit hooks. **Nginx** acts as a reverse proxy, efficiently routing requests to the appropriate services.
-
-## 🎉 Join the MindGarden Movement!
-MindGarden makes mental self-care **simple, engaging, and rewarding**. Let's cultivate a **happier, healthier mind**—one check-in at a time. 🌱💙
