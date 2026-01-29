@@ -1,6 +1,7 @@
 # MindGarden: Your AI-Powered Mental Wellness Companion
 
-###  Team Members
+### Team Members
+
 - **Elhan Mahmutović**
 - **Mirza Abdulahović**
 - **Vedad Kruho**
@@ -8,16 +9,18 @@
 - **Belmir Grahić**
 
 ## Overview
+
 MindGarden is a cutting-edge mental wellness platform that combines **AI-powered chat support** and a **gamified reward system** to help users maintain their psychological well-being through **daily check-ins**. By offering a unique, visual representation of personal growth, MindGarden transforms mental self-care into an **engaging and rewarding journey**.
 
 ## Goals
 
--  **Encourage Consistency** - Establishing a **daily mental health check-in routine** is crucial for long-term improvement. MindGarden tracks user activity to reinforce this habit.
--  **Motivate Through Gamification** - **Achievements, streaks, and progress tracking** help sustain user engagement, providing an intuitive and visually appealing experience.
--  **Leverage Positive Reinforcement** - **Dopamine and endorphin-releasing achievements** make users feel rewarded, fostering long-term mental wellness habits.
--  **Support Personal Growth** - A **growing bonsai tree** represents a user's mental health journey, reinforcing mindfulness, perseverance, and achievement.
+- **Encourage Consistency** - Establishing a **daily mental health check-in routine** is crucial for long-term improvement. MindGarden tracks user activity to reinforce this habit.
+- **Motivate Through Gamification** - **Achievements, streaks, and progress tracking** help sustain user engagement, providing an intuitive and visually appealing experience.
+- **Leverage Positive Reinforcement** - **Dopamine and endorphin-releasing achievements** make users feel rewarded, fostering long-term mental wellness habits.
+- **Support Personal Growth** - A **growing bonsai tree** represents a user's mental health journey, reinforcing mindfulness, perseverance, and achievement.
 
-## Why MindGarden? 
+## Why MindGarden?
+
 ## Overview
 
 MindGarden is a cutting-edge mental wellness platform that combines **AI-powered chat support** and a **gamified reward system** to help users maintain their psychological well-being through **daily check-ins**. By offering a unique, visual representation of personal growth, MindGarden transforms mental self-care into an **engaging and rewarding journey**.
@@ -29,10 +32,10 @@ Experience MindGarden yourself by visiting our live deployment:
 
 ## Goals
 
-* **Encourage Consistency** - Establishing a **daily mental health check-in routine** is crucial for long-term improvement. MindGarden tracks user activity to reinforce this habit.
-* **Motivate Through Gamification** - **Achievements, streaks, and progress tracking** help sustain user engagement, providing an intuitive and visually appealing experience.
-* **Leverage Positive Reinforcement** - **Dopamine and endorphin-releasing achievements** make users feel rewarded, fostering long-term mental wellness habits.
-* **Support Personal Growth** - A **growing bonsai tree** represents a user's mental health journey, reinforcing mindfulness, perseverance, and achievement.
+- **Encourage Consistency** - Establishing a **daily mental health check-in routine** is crucial for long-term improvement. MindGarden tracks user activity to reinforce this habit.
+- **Motivate Through Gamification** - **Achievements, streaks, and progress tracking** help sustain user engagement, providing an intuitive and visually appealing experience.
+- **Leverage Positive Reinforcement** - **Dopamine and endorphin-releasing achievements** make users feel rewarded, fostering long-term mental wellness habits.
+- **Support Personal Growth** - A **growing bonsai tree** represents a user's mental health journey, reinforcing mindfulness, perseverance, and achievement.
 
 ## Why MindGarden?
 
@@ -42,16 +45,18 @@ The **Japanese bonsai tree** serves as a powerful visual motivator, offering a *
 
 ## Tree of Mindfulness Progression:
 
-| Level 1 | Level 2 | Level 3 | Level 4 |
-|---------|---------|---------|---------|
+| Level 1                                               | Level 2                                               | Level 3                                               | Level 4                                               |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | ![Bonsai Level 1](./frontend/public/BonsaiLevel1.gif) | ![Bonsai Level 2](./frontend/public/BonsaiLevel2.gif) | ![Bonsai Level 3](./frontend/public/BonsaiLevel3.gif) | ![Bonsai Level 4](./frontend/public/BonsaiLevel4.gif) |
 
-## Tech Stack & Implementation  
+## Tech Stack & Implementation
 
-### Frontend  
-Built with **Next.js** for fast performance and SEO optimization, styled using **Tailwind CSS** and **Shadcn UI** for a modern, responsive design. **TypeScript** ensures maintainability and type safety, while **Zustand** provides lightweight state management. Data fetching is handled efficiently with **React Query**, and authentication is secured using **NextAuth.js** with a **PostgreSQL adapter**.  
+### Frontend
 
-### Backend  
+Built with **Next.js** for fast performance and SEO optimization, styled using **Tailwind CSS** and **Shadcn UI** for a modern, responsive design. **TypeScript** ensures maintainability and type safety, while **Zustand** provides lightweight state management. Data fetching is handled efficiently with **React Query**, and authentication is secured using **NextAuth.js** with a **PostgreSQL adapter**.
+
+### Backend
+
 ## Tech Stack & Implementation
 
 ### Frontend
