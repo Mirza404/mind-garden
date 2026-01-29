@@ -29,6 +29,7 @@ import {
   useAddChatMessage,
 } from '@/app/api-client/ai-chat/use-chat-query';
 import errorCatch from '@/app/api-client/error-message';
+import ChatDisabledOverlay from './chat-disabled-overlay';
 
 export function ChatInterface() {
   const { data: session } = useSession();
@@ -302,6 +303,7 @@ export function ChatInterface() {
           </div>
         </>
       </PageContainer>
+      <ChatDisabledOverlay />
     </>
   );
 }
