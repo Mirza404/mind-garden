@@ -303,7 +303,7 @@ export function ChatInterface() {
           </div>
         </>
       </PageContainer>
-          <ChatDisabledOverlay />
+      <ChatDisabledOverlay />
     </>
   );
 }
