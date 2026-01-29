@@ -44,16 +44,12 @@ jobs:
       - name: Install Frontend Dependencies
         run: |
           cd frontend
-          npm install
-        env:
-          HUSKY: 0
+          npm install --ignore-scripts
 
       - name: Install Backend Dependencies
         run: |
           cd backend
-          npm install
-        env:
-          HUSKY: 0
+          npm install --ignore-scripts
 
       - name: Check Frontend Formatting
         run: |
