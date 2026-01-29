@@ -45,11 +45,15 @@ jobs:
         run: |
           cd frontend
           npm install
+        env:
+          HUSKY=0
 
       - name: Install Backend Dependencies
         run: |
           cd backend
           npm install
+        env:
+          HUSKY=0
 
       - name: Check Frontend Formatting
         run: |
