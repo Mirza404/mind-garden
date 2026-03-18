@@ -2,8 +2,8 @@ import cors from 'cors';
 
 const whitelist = [
   'http://localhost:3000',
-  'https://mind-garden.hyper6xhurmasice.online',
-  'http://mind-garden.hyper6xhurmasice.online',
+  // 'https://mind-garden.hyper6xhurmasice.online',//whatever the frontend URL is, add it here
+  // 'http://mind-garden.hyper6xhurmasice.online',//if you have both http and https versions of your frontend, add both
 ];
 export const corsOptions: cors.CorsOptions = {
   origin: function (origin, callback) {
