@@ -36,7 +36,6 @@ jest.mock('groq-sdk', () => {
 });
 
 const groqCreateMock = (global as GlobalWithGroqMocks).__groqCreateMock__!;
-const groqConstructor = (global as GlobalWithGroqMocks).__groqConstructor__!;
 
 jest.mock('../../../src/data-source', () => ({
   AppDataSource: {
