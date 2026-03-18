@@ -53,4 +53,18 @@ describe('errorHandler', () => {
       })
     );
   });
+
+  it('hides stack traces when not in development mode', () => {
+    const genericError = new Error('Boom');
+    process.env.NODE_ENV = 'production';
+
+    errorHandler(genericError, mockRequest, mockResponse, mockNext);
+
+    expect(mockResponse.status).toHaveBeenCalledWith(500);
+    expect(mockResponse.json).toHaveBeenCalledWith({
+      success: false,
+      message: 'Boom',
+      stack: undefined,
+    });
+  });
 });
