@@ -17,6 +17,7 @@ const loadRateLimiter = (returnValue: symbol = Symbol('rate-limit')) => {
       };
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-require-imports -- need dynamic require while module is mocked
     exportedModule =
       require('../../../src/utils/rateLimiter') as typeof import('../../../src/utils/rateLimiter');
   });
