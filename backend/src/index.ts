@@ -3,7 +3,6 @@ import express from 'express';
 import cors from 'cors';
 import { errorHandler } from './middleware/errorMiddleware';
 import { AppDataSource } from './data-source';
-
 import dailyCheckInRoutes from './routes/dailyCheckInRoutes';
 import wpRoutes from './routes/wpRoutes';
 import chatRoutes from './routes/chatRoutes';
