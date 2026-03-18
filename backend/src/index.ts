@@ -22,7 +22,6 @@ AppDataSource.initialize()
   });
 
 const app = express();
-const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(cors(corsOptions));
@@ -43,9 +42,5 @@ app.use('/api/achievements', achievementRoutes);
 
 // Error handler - MUST be after all routes and middleware
 app.use(errorHandler);
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 export default app;
