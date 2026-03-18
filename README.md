@@ -33,8 +33,9 @@ The **Japanese bonsai tree** serves as a powerful visual motivator, offering a *
 ### Frontend  
 Built with **Next.js** for fast performance and SEO optimization, styled using **Tailwind CSS** and **Shadcn UI** for a modern, responsive design. **TypeScript** ensures maintainability and type safety, while **Zustand** provides lightweight state management. Data fetching is handled efficiently with **React Query**, and authentication is secured using **NextAuth.js** with a **PostgreSQL adapter**.  
 
-### Backend  
-Powered by **Express.js** for robust API handling and business logic, with **PostgreSQL** managing user data, check-ins, and AI interactions. **TypeORM** ensures structured database management, and **TypeScript** enhances reliability and clarity. Integrated **OpenAI API** enables an intelligent chatbot for mental wellness support. Testing is done with **Jest**.
+### Backend
+
+Powered by **Express.js** for robust API handling and business logic, with **PostgreSQL** managing user data, check-ins, and AI interactions. **TypeORM** ensures structured database management, and **TypeScript** enhances reliability and clarity. Integrated **Groq API** enables an intelligent chatbot for mental wellness support. Testing is done with **Jest**.
 
 ### Infrastructure & Deployment
 
