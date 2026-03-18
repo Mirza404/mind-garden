@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node --project tsconfig.json src/index.ts",
+    "dev": "nodemon --exec ts-node --project tsconfig.json src/server.ts",
     "build": "tsc",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
