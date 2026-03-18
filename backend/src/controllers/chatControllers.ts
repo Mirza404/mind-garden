@@ -1,6 +1,5 @@
-import OpenAI from 'openai';
+import Groq from 'groq-sdk';
 import { Response, Request } from 'express';
-import { ChatCompletionMessageParam } from 'openai/resources';
 import { AppDataSource } from '../data-source';
 import { Chat } from '../entities/Chat';
 import { User } from '../entities/User';
@@ -8,9 +7,21 @@ import type { Role } from '../types/Role';
 import { sendSuccess, throwError } from '../utils/responseHandlers';
 import { getUserByEmail } from '../utils/idHandler';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_SECRET_KEY,
+const groqApiKey = process.env.GROQ_API_KEY;
+if (!groqApiKey) {
+  throw new Error('GROQ_API_KEY is not defined');
+}
+
+const groq = new Groq({
+  apiKey: groqApiKey,
 });
+
+const groqModel = process.env.GROQ_CHAT_MODEL ?? 'llama-3.3-70b-versatile';
+
+type ChatMessage = {
+  role: Role;
+  content: string;
+};
 
 export async function streamChatMessage(req: Request, res: Response) {
   const { input } = req.body;
@@ -42,7 +53,7 @@ export async function streamChatMessage(req: Request, res: Response) {
     content: msg.content as string,
   }));
 
-  const conversation: ChatCompletionMessageParam[] = [
+  const conversation: ChatMessage[] = [
     {
       role: 'system',
       content: `
@@ -59,8 +70,8 @@ export async function streamChatMessage(req: Request, res: Response) {
     ...limitedMessages,
   ];
 
-  const completion = await openai.chat.completions.create({
-    model: 'gpt-4o-mini',
+  const completion = await groq.chat.completions.create({
+    model: groqModel,
     messages: conversation,
     stream: true,
   });
